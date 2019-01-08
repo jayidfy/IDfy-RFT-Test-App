@@ -1,7 +1,7 @@
-# Steps to integrate the Right First Time SDK in your Android app
+# Steps to integrate the IDfy's Right First Time SDK in your Android app
 
 
-Add RFTCaptureSdk library to app gradle file: 
+* Add RFTCaptureSdk library to app gradle file: 
 ```gradle
 dependencies { 
     implementation 'com.idfy:rftcapturesdk:+'
