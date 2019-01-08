@@ -13,14 +13,14 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        RelativeLayout relAadhaarFront = findViewById(R.id.aadhaar_front);
-        RelativeLayout relAadhaarBack = findViewById(R.id.aadhaar_back);
-        RelativeLayout reldriving_license = findViewById(R.id.driving_license);
-        RelativeLayout relPan = findViewById(R.id.pan);
-        RelativeLayout relvoter_front = findViewById(R.id.voter_front);
-        RelativeLayout relvoter_back = findViewById(R.id.voter_back);
-        RelativeLayout relpassport_front = findViewById(R.id.passport_front);
-        RelativeLayout relpassport_back = findViewById(R.id.passport_back);
+        RelativeLayout relAadhaarFront = findViewById(R.id.relative_layout_aadhaar_front);
+        RelativeLayout relAadhaarBack = findViewById(R.id.relative_layout_aadhaar_back);
+        RelativeLayout relDrivingLicense = findViewById(R.id.relative_layout_driving_license);
+        RelativeLayout relPan = findViewById(R.id.relative_layout_pan);
+        RelativeLayout relVoterFront = findViewById(R.id.relative_layout_voter_front);
+        RelativeLayout relVoterBack = findViewById(R.id.relative_layout_voter_back);
+        RelativeLayout relPassportFront = findViewById(R.id.relative_layout_passport_front);
+        RelativeLayout relPassportBack = findViewById(R.id.relative_layout_passport_back);
 
         relAadhaarFront.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +40,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        reldriving_license.setOnClickListener(new View.OnClickListener() {
+        relDrivingLicense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Main2Activity.this, MainActivity.class);
@@ -58,7 +58,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        relvoter_front.setOnClickListener(new View.OnClickListener() {
+        relVoterFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Main2Activity.this, MainActivity.class);
@@ -67,7 +67,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        relvoter_back.setOnClickListener(new View.OnClickListener() {
+        relVoterBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Main2Activity.this, MainActivity.class);
@@ -76,7 +76,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        relpassport_front.setOnClickListener(new View.OnClickListener() {
+        relPassportFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Main2Activity.this, MainActivity.class);
@@ -85,7 +85,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        relpassport_back.setOnClickListener(new View.OnClickListener() {
+        relPassportBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Main2Activity.this, MainActivity.class);

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Main2Activity">
 
     <RelativeLayout
-        android:id="@+id/heading"
+        android:id="@+id/relative_layout_heading"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -16,13 +15,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Select Document" />
+            android:text="@string/select_document" />
 
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:id="@+id/aadhaar_front"
+        android:id="@+id/relative_layout_aadhaar_front"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -32,12 +31,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Aadhaar front" />
+            android:text="@string/aadhaar_front" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/aadhaar_back"
+        android:id="@+id/relative_layout_aadhaar_back"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -47,12 +46,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Aadhaar back" />
+            android:text="@string/aadhaar_back" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/voter_front"
+        android:id="@+id/relative_layout_voter_front"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -62,12 +61,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Voter front" />
+            android:text="@string/voter_front" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/voter_back"
+        android:id="@+id/relative_layout_voter_back"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -77,12 +76,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Voter back"/>
+            android:text="@string/voter_back" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/driving_license"
+        android:id="@+id/relative_layout_driving_license"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -92,12 +91,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Driving license"/>
+            android:text="@string/driving_license" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/pan"
+        android:id="@+id/relative_layout_pan"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -107,12 +106,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Pan"/>
+            android:text="@string/pan" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/passport_front"
+        android:id="@+id/relative_layout_passport_front"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -122,12 +121,12 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Passport front"/>
+            android:text="@string/passport_front" />
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/passport_back"
+        android:id="@+id/relative_layout_passport_back"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -137,7 +136,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
-            android:text="Passport back"/>
+            android:text="@string/passport_back" />
 
     </RelativeLayout>
 

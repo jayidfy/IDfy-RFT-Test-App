@@ -20,10 +20,10 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements RftSdkCallbackInterface {
 
-    Bitmap currentImage;
-    ProgressDialog dail;
-    ImageView img;
-    static String currentValue = "ind_aadhaar_front";
+    private Bitmap currentImage;
+    private ProgressDialog progressDialog;
+    private ImageView image;
+    private static String currentValue = "ind_aadhaar_front";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,41 +33,37 @@ public class MainActivity extends AppCompatActivity implements RftSdkCallbackInt
         Intent i = getIntent();
         currentValue = i.getStringExtra("doc");
 
-        img = findViewById(R.id.image);
-        Button btn = findViewById(R.id.button);
-        Button btn2 = findViewById(R.id.button2);
-        Button btn3 = findViewById(R.id.button3);
-        TextView txtheader = findViewById(R.id.textView);
-
-        txtheader.setText(currentValue);
+        image = findViewById(R.id.image);
+        Button buttonDocCapture = findViewById(R.id.button_doc_capture);
+        Button buttonFaceCapture = findViewById(R.id.button_face_capture);
+        Button buttonSubmit = findViewById(R.id.button_submit);
+        TextView textViewHeader = findViewById(R.id.text_view_header);
+        textViewHeader.setText(currentValue);
 
         final RFTSdk rftsdk = RFTSdk.init(MainActivity.this, "PLACE_YOUR_ACCOUNT_ID_HERE", "PLACE_YOUR_TOKEN_HERE");
 
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        buttonDocCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rftsdk.CaptureDocImage(MainActivity.this, currentValue, MainActivity.this);
             }
         });
 
-
-        btn2.setOnClickListener(new View.OnClickListener() {
+        buttonFaceCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rftsdk.CaptureFaceImage(MainActivity.this, MainActivity.this);
             }
         });
 
-        btn3.setOnClickListener(new View.OnClickListener() {
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dail = new ProgressDialog(MainActivity.this);
-                    dail.setMessage("Please wait");
-                    dail.show();
+                    progressDialog = new ProgressDialog(MainActivity.this);
+                    progressDialog.setMessage("Please wait");
+                    progressDialog.show();
                     new AsyncReq(rftsdk).execute();
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -75,12 +71,11 @@ public class MainActivity extends AppCompatActivity implements RftSdkCallbackInt
         });
     }
 
-
     @Override
     public void onImageCaptureSuccess(Bitmap bitmap) {
         //Use the result image as required
         currentImage = bitmap;
-        img.setImageBitmap(bitmap);
+        image.setImageBitmap(bitmap);
     }
 
     @Override
@@ -92,13 +87,12 @@ public class MainActivity extends AppCompatActivity implements RftSdkCallbackInt
 
         RFTSdk rftsdk;
 
-        public AsyncReq(RFTSdk instance) {
+        AsyncReq(RFTSdk instance) {
             this.rftsdk = instance;
         }
 
         @Override
         protected JSONObject doInBackground(Void... voids) {
-
             JSONObject result = null;
             try {
                 result = rftsdk.UploadImage("PLACE_YOUR_ACCOUNT_ID_HERE",
@@ -106,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements RftSdkCallbackInt
                         "PLACE_YOUR_GROUP_ID_HERE",
                         "ind_amit", currentImage);
             } catch (Exception e) {
-                dail.dismiss();
+                progressDialog.dismiss();
                 e.printStackTrace();
             }
             return result;
@@ -115,8 +109,8 @@ public class MainActivity extends AppCompatActivity implements RftSdkCallbackInt
         @Override
         protected void onPostExecute(JSONObject jsonObject) {
             super.onPostExecute(jsonObject);
-            dail.dismiss();
-            Toast.makeText(MainActivity.this, "Upload succes, Response-> " + jsonObject.toString(), Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            Toast.makeText(MainActivity.this, "Upload Success, Response-> " + jsonObject.toString(), Toast.LENGTH_LONG).show();
         }
     }
 }
